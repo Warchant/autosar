@@ -35,7 +35,7 @@ class SwcImplementationParser(ElementParser):
             elif xmlElem.tag == 'BEHAVIOR-REF':
                 continue
             elif xmlElem.tag == 'BUILD-ACTION-MANIFESTS':
-                #TODO: Implement later
+                raise NotImplementedError()
                 continue
             elif xmlElem.tag == 'CODE-DESCRIPTORS':
                 # Create the list to indicate that the base element exists.
@@ -46,28 +46,28 @@ class SwcImplementationParser(ElementParser):
                     else:
                         raise NotImplementedError(codeElem.tag)
             elif xmlElem.tag == 'COMPILERS':
-                #TODO: Implement later
+                raise NotImplementedError()
                 continue
             elif xmlElem.tag == 'GENERATED-ARTIFACTS':
-                #TODO: Implement later
+                raise NotImplementedError()
                 continue
             elif xmlElem.tag == 'HW-ELEMENT-REFS':
-                #TODO: Implement later
+                raise NotImplementedError()
                 continue
             elif xmlElem.tag == 'LINKERS':
-                #TODO: Implement later
+                raise NotImplementedError()
                 continue
             elif xmlElem.tag == 'MC-SUPPORT':
-                #TODO: Implement later
+                raise NotImplementedError()
                 continue
             elif xmlElem.tag == 'PROGRAMMING-LANGUAGE':
                 implementation.programmingLanguage = self.parseTextNode(xmlElem)
                 continue
             elif xmlElem.tag == 'REQUIRED-ARTIFACTS':
-                #TODO: Implement later
+                raise NotImplementedError()
                 continue
             elif xmlElem.tag == 'REQUIRED-GENERATOR-TOOLS':
-                #TODO: Implement later
+                raise NotImplementedError()
                 continue
             elif xmlElem.tag == 'RESOURCE-CONSUMPTION':
                 implementation.resourceConsumption = self.parseResourceConsumption(xmlElem, parent=implementation)
@@ -75,7 +75,7 @@ class SwcImplementationParser(ElementParser):
             elif xmlElem.tag == 'SW-VERSION':
                 implementation.swVersion = self.parseTextNode(xmlElem)
             elif xmlElem.tag == 'SWC-BSW-MAPPING-REF':
-                #TODO: Implement later
+                raise NotImplementedError()
                 continue
             elif xmlElem.tag == 'USED-CODE-GENERATOR':
                 implementation.useCodeGenerator = self.parseTextNode(xmlElem)
@@ -125,7 +125,7 @@ class SwcImplementationParser(ElementParser):
                                 engineeringObject.domain = self.parseTextNode(elem)
                         code.artifactDescriptors.append(engineeringObject)
             elif xmlElem.tag == 'CALLBACK-HEADER-REFS':
-                #TODO: Implement later
+                raise NotImplementedError()
                 continue
             elif xmlElem.tag == 'TYPE':
                 # Only valid in Autosar 3.
@@ -148,20 +148,20 @@ class SwcImplementationParser(ElementParser):
             if xmlElem.tag   == 'SHORT-NAME':
                 continue
             elif xmlElem.tag == 'EXECUTION-TIMES':
-                #TODO: Implement later
+                raise NotImplementedError()
                 continue
             elif xmlElem.tag == 'HEAP-USAGES':
-                #TODO: Implement later
+                raise NotImplementedError()
                 continue
             elif xmlElem.tag == 'MEMORY-SECTIONS':
                 res.memorySections = []
                 for xmlSection in xmlElem.findall('./*'):
                     res.memorySections.append(self.parseMemorySection(xmlSection, res))
             elif xmlElem.tag == 'SECTION-NAME-PREFIXS':
-                #TODO: Implement later
+                raise NotImplementedError()
                 continue
             elif xmlElem.tag == 'STACK-USAGES':
-                #TODO: Implement later
+                raise NotImplementedError()
                 continue
             else:
                 self.defaultHandler(xmlElem)
@@ -183,7 +183,7 @@ class SwcImplementationParser(ElementParser):
             elif xmlElem.tag == 'ALIGNMENT':
                 section.aligment = self.parseTextNode(xmlElem)
             elif xmlElem.tag == 'EXECUTABLE-ENTITY-REFS':
-                #TODO: Implement later
+                raise NotImplementedError()
                 continue
             elif xmlElem.tag == 'MEM-CLASS-SYMBOL':
                 section.memClassSymbol = self.parseTextNode(xmlElem)
@@ -192,7 +192,7 @@ class SwcImplementationParser(ElementParser):
                 for xmlOption in xmlElem.findall('./*'):
                     section.options.append(self.parseTextNode(xmlOption))
             elif xmlElem.tag == 'PREFIX-REF':
-                #TODO: Implement later
+                raise NotImplementedError()
                 continue
             elif xmlElem.tag == 'SIZE':
                 section.size = self.parseIntNode(xmlElem)

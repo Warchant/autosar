@@ -137,7 +137,7 @@ class BehaviorParser(ElementParser):
                         elif xmlEvent.tag == 'MODE-SWITCHED-ACK-EVENT':
                             event = self.parseModeSwitchedAckEvent(xmlEvent, internalBehavior)
                         elif xmlEvent.tag == 'DATA-RECEIVE-ERROR-EVENT':
-                            #TODO: Implement later
+                            raise NotImplementedError()
                             pass
                         else:
                             raise NotImplementedError(xmlEvent.tag)
