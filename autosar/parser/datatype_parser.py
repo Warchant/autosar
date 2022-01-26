@@ -196,7 +196,7 @@ class DataTypeParser(ElementParser):
 
     def parseImplementationDataTypeElement(self, xmlRoot, parent):
         assert (xmlRoot.tag == 'IMPLEMENTATION-DATA-TYPE-ELEMENT')
-        (arraySize, arraySizeSemantics, variants) = (None, None, None)
+        (arraySize, arraySizeSemantics, variants, subElements) = (None, None, None, [])
         self.push()
         for xmlElem in xmlRoot.findall('./*'):
             if xmlElem.tag == 'SW-DATA-DEF-PROPS':
@@ -206,10 +206,10 @@ class DataTypeParser(ElementParser):
             elif xmlElem.tag == 'ARRAY-SIZE-SEMANTICS':
                 arraySizeSemantics = self.parseTextNode(xmlElem)
             elif xmlElem.tag == 'SUB-ELEMENTS':
-                pass #implement later
+                subElements = self.parseImplementationDataTypeSubElements(xmlElem, parent)
             else:
                 self.defaultHandler(xmlElem)
-        elem = autosar.datatype.ImplementationDataTypeElement(self.name, self.category, arraySize, arraySizeSemantics, variants, parent, self.adminData)
+        elem = autosar.datatype.ImplementationDataTypeElement(self.name, self.category, arraySize, arraySizeSemantics, variants, parent, self.adminData, subElements=subElements)
         self.pop(elem)
         return elem
 

@@ -511,10 +511,11 @@ class SwBaseType(Element):
 class ImplementationDataTypeElement(Element):
     def tag(self, version=None): return 'IMPLEMENTATION-DATA-TYPE-ELEMENT'
 
-    def __init__(self, name, category = None, arraySize = None, arraySizeSemantics = None, variantProps = None, parent = None, adminData = None):
+    def __init__(self, name, category = None, arraySize = None, arraySizeSemantics = None, variantProps = None, parent = None, adminData = None, subElements = []):
         super().__init__(name, parent, adminData, category)
         self.arraySize = arraySize
         self.variantProps = []
+        self.subElements = subElements
         if arraySize is not None:
             if arraySizeSemantics is not None:
                 self.arraySizeSemantics = arraySizeSemantics
