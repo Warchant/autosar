@@ -20,7 +20,6 @@ Requirements
 ------------
 
 * `Python 3 <https://www.python.org/>`_
-* `cfile <https://github.com/cogu/cfile/>`_
 
 Documentation
 -------------
@@ -40,10 +39,5 @@ Current Roadmap
 v0.4.0
 ~~~~~~
 
-* Maintenance track (Relabel v0.3.11 if no more issues are found)
-
-v0.5.0
-~~~~~~
-
-* Complete rewrite of RTE contract phase generator (upgrade to AUTOSAR4)
-* At the same time upgrade the `autosar-demo project <https://github.com/cogu/autosar-demo>`_ to AUTOSAR4
+* Remove dependency on `cfile`.
+* Throw `NotImplementedError` if a feature is not implemented.

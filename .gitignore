@@ -21,3 +21,6 @@ __pycache__/
 /tests/arxml/expected_gen/*.txt
 
 /release_notes/
+
+/.eggs
+/venv
